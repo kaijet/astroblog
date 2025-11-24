@@ -1,11 +1,15 @@
+---
+import '../styles/global.css';
+import Navigation from'../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
+---
+
+
 <head>
     <meta charset="utf-8" />
 </head>
 <body>
-  <a href="/">main page</a>
-  <a href="/about/">about</a>
-  <a href="/blog/">blog</a>
-
+  <Navigation />
   <h1>my astro website</h1>
   <h1>my astro study website</h1>
   <p>i will share astro study journey</p>
@@ -14,4 +18,5 @@
     <li><a href="/posts/post2/">文章 2</a></li>
     <li><a href="/posts/post3/">文章 3</a></li>
   </ul>
+<Foot />
 </body>

@@ -1,5 +1,10 @@
 ---
 
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
+
+
 ---
 
 <html lang="en">
@@ -11,10 +16,9 @@
 		<title>Astro</title>
 	</head>
 	<body>
-	    <a href="/">main page</a>
-        <a href="/about/">about</a>
-		<a href="/blog/">blog</a>
+		<Navigation/>
 		<h1>Astro</h1>
 		<h3>我的ASTRO站点</h3>
+		<Foot/>
 	</body>
 </html>
