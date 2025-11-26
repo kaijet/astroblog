@@ -1,24 +1,10 @@
 ---
-
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Foot from '../components/Foot.astro';
-
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pagetitle = "首页";
+import BlogPost from '../components/BlogPost.astro';
+import Greeting from '../components/Greeting';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Navigation/>
-		<h1>Astro</h1>
-		<h3>我的ASTRO站点</h3>
-		<Foot/>
-	</body>
-</html>
+<BaseLayout pagetitle={pagetitle}>
+  <h2>我超棒的博客副标题</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+</BaseLayout>

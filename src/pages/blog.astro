@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Navigation from'../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
+import Header from '../components/Header.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
 
@@ -9,14 +11,15 @@ import Foot from '../components/Foot.astro';
     <meta charset="utf-8" />
 </head>
 <body>
-  <Navigation />
+  <Header />
   <h1>my astro website</h1>
   <h1>my astro study website</h1>
   <p>i will share astro study journey</p>
   <ul>
-    <li><a href="/posts/post1/">文章 1</a></li>
-    <li><a href="/posts/post2/">文章 2</a></li>
-    <li><a href="/posts/post3/">文章 3</a></li>
+    <!-- <li><a href="/posts/post1/">文章 1</a></li> -->
+    <!-- <li><a href="/posts/post2/">文章 2</a></li> -->
+    <!-- <li><a href="/posts/post3/">文章 3</a></li> -->
+    {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>
 <Foot />
 </body>

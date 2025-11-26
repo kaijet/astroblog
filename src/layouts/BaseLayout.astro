@@ -1,0 +1,25 @@
+---
+import Header from '../components/Header.astro';
+import Foot from '../components/Foot.astro';
+import '../styles/global.css';
+// const pagetitle = "Astro 博客首页";
+const {pagetitle} = Astro.props;
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pagetitle}</title>
+  </head>
+  <body>
+    <Header />
+    <h1>{pagetitle}</h1>
+    <slot />
+    <Foot />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>
